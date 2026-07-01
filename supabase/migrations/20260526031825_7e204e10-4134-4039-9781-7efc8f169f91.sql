@@ -1,0 +1,1 @@
+ALTER TABLE public.schedule_slot_positions ADD COLUMN IF NOT EXISTS previous_classroom text;

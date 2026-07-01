@@ -1,0 +1,1 @@
+ALTER TABLE public.schedule_assignments DROP CONSTRAINT IF EXISTS schedule_assignments_slot_id_member_id_key;

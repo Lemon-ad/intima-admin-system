@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 355 85% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 355 30% 95%;
+    --secondary-foreground: 355 85% 35%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 355 85% 95%;
+    --accent-foreground: 355 85% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 355 85% 52%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 355 85% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 355 85% 95%;
+    --sidebar-accent-foreground: 355 85% 35%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 355 85% 52%;
+
+    /* Custom tokens */
+    --intima-red: 355 85% 52%;
+    --intima-red-dark: 355 85% 40%;
+    --intima-red-light: 355 85% 95%;
+    --intima-gradient: linear-gradient(135deg, hsl(355, 85%, 52%), hsl(355, 85%, 40%));
+
+    /* Unified position tokens — SLT purple, EXCO red, Junior blue */
+    --slt-color: 270 70% 55%;
+    --slt-bg: 270 70% 95%;
+    --exco-color: 355 85% 52%;
+    --exco-bg: 355 85% 95%;
+    --junior-color: 215 85% 55%;
+    --junior-bg: 215 85% 95%;
+    --blocked-color: 0 0% 75%;
+    --highlight-glow: 0 0 15px hsl(355, 85%, 52%, 0.5);
+
+    /* Dashboard availability tag tokens (mirror position tokens) */
+    --tag-slt: var(--slt-color);
+    --tag-slt-bg: var(--slt-bg);
+    --tag-exco: var(--exco-color);
+    --tag-exco-bg: var(--exco-bg);
+    --tag-members: var(--junior-color);
+    --tag-members-bg: var(--junior-bg);
+    --tag-busy-bg: 0 0% 88%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 355 85% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 355 30% 18%;
+    --secondary-foreground: 355 85% 80%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 355 30% 22%;
+    --accent-foreground: 355 85% 85%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 355 85% 58%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 355 85% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 355 30% 22%;
+    --sidebar-accent-foreground: 355 85% 85%;
+    --sidebar-border: 0 0% 22%;
+    --sidebar-ring: 355 85% 58%;
+
+    /* Position tokens stay similar in dark — slightly brighter */
+    --slt-color: 270 75% 70%;
+    --slt-bg: 270 40% 22%;
+    --exco-color: 355 85% 65%;
+    --exco-bg: 355 50% 22%;
+    --junior-color: 215 90% 70%;
+    --junior-bg: 215 50% 22%;
+    --tag-slt: var(--slt-color);
+    --tag-slt-bg: var(--slt-bg);
+    --tag-exco: var(--exco-color);
+    --tag-exco-bg: var(--exco-bg);
+    --tag-members: var(--junior-color);
+    --tag-members-bg: var(--junior-bg);
+    --tag-busy-bg: 0 0% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .intima-gradient {
+    background: linear-gradient(135deg, hsl(355, 85%, 52%), hsl(355, 85%, 40%));
+  }
+  .intima-gradient-text {
+    background: linear-gradient(135deg, hsl(355, 85%, 52%), hsl(355, 85%, 40%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Animated border glow for selected slots */
+@keyframes border-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(355, 85%, 52%, 0.3),
+                inset 0 0 5px hsl(355, 85%, 52%, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(355, 85%, 52%, 0.6),
+                inset 0 0 10px hsl(355, 85%, 52%, 0.2);
+  }
+}
+
+@keyframes light-ray {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.slot-selected {
+  animation: border-glow 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.slot-selected::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, hsl(355, 85%, 52%, 0.5), transparent) border-box;
+  background-size: 200% 100%;
+  animation: light-ray 2s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 75%);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 60%);
+}

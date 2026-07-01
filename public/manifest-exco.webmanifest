@@ -1,0 +1,25 @@
+{
+  "name": "INTIMA Exco Schedule",
+  "short_name": "INTIMA Exco",
+  "description": "INTIMA EXCO duty schedules and reminders.",
+  "id": "/exco",
+  "start_url": "/exco",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/app-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
